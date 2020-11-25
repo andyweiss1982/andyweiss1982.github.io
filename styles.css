@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  /* https://css-tricks.com/almanac/properties/c/color-adjust/ */
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 
 html {
@@ -112,13 +115,14 @@ a.button {
   text-decoration: none;
   transition: transform 0.3s;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 a.button:hover {
   transform: scale(1.08);
 }
 
-@media (max-width: 45rem) {
+@media only screen and (max-width: 45rem) {
   body {
     margin: 0;
   }
@@ -142,6 +146,46 @@ a.button:hover {
 }
 
 @supports not (scroll-behavior: smooth) {
+  a.button {
+    display: none;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+  body {
+    margin: 0;
+  }
+  main {
+    box-shadow: none;
+  }
+  header {
+    position: static;
+  }
+  nav {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  h2 {
+    padding: 0.25rem 0.25rem;
+    margin: 0.5rem 0;
+    border-top: 0;
+    font-size: 1.05rem;
+  }
+  h2:first-of-type {
+    display: none;
+  }
+  section div {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  h3 {
+    margin: 0;
+    font-size: 0.95rem;
+  }
   a.button {
     display: none;
   }
