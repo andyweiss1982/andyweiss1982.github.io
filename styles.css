@@ -160,6 +160,7 @@ a.button:hover {
   }
   main {
     box-shadow: none;
+    padding: 1.04rem;
   }
   header {
     position: static;
