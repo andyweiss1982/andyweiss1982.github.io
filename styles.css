@@ -99,11 +99,11 @@ section div {
   color: white;
   border-top-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
-  padding: 0.25rem;
+  padding: 0.15rem;
   position: absolute;
   top: 0;
   right: 0;
-  width: 5rem;
+  width: 5.75rem;
   text-align: center;
 }
 
